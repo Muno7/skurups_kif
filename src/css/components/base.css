@@ -1,0 +1,126 @@
+/* Base styles (Mobile First) */
+/* Centralized CSS Variables */
+:root {
+    --primary: #0068cc;
+    --primary-dark: #004a99;
+    --primary-light: #e6f0fa;
+    --accent: #f59e0b;
+    --accent-dark: #d97706;
+    --text-dark: #333333;
+    --text-light: #666666;
+}
+
+/* Default font settings */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #0068cc;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0153a6;
+}
+
+.btn-secondary {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #0068cc;
+    border: 1px solid #0068cc;
+}
+
+.btn-outline:hover {
+    background-color: #0068cc;
+    color: white;
+}
+
+.btn-white-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+    backdrop-filter: blur(5px);
+}
+
+.btn-white-outline:hover {
+    background-color: white;
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

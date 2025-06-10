@@ -1,0 +1,244 @@
+:root {
+    --background: #f9f9f9;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s;
+}
+
+.activities-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards 0.2s;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.title-underline {
+    height: 4px;
+    width: 80px;
+    background-color: var(--accent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.activity-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.activity-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.activity-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.activity-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.card-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.view-activity {
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    transform: translateY(20px);
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.activity-title {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.activity-description {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-speed);
+    font-size: 0.95rem;
+}
+
+.arrow-icon {
+    margin-left: 5px;
+    transition: transform var(--transition-speed);
+}
+
+.view-all-container {
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards 0.9s;
+}
+
+.view-all-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 4px 10px rgba(0, 104, 204, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .activities-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .activities-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .activity-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Desktop Hover Effects - Only apply on larger screens */
+@media (min-width: 992px) {
+    .activity-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Image zoom effect */
+    .activity-card:hover .card-image {
+        transform: scale(1.05);
+    }
+    
+    /* Show overlay on hover */
+    .activity-card:hover .image-overlay {
+        opacity: 1;
+    }
+    
+    /* Button animation on hover */
+    .activity-card:hover .view-activity {
+        transform: translateY(0);
+    }
+    
+    .view-activity:hover {
+        background-color: white;
+        color: var(--primary);
+    }
+    
+    .read-more:hover {
+        color: var(--accent);
+    }
+    
+    /* Arrow animation on hover */
+    .read-more:hover .arrow-icon {
+        transform: translateX(5px);
+    }
+
+    .view-all-button:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 104, 204, 0.4);
+    }
+}
