@@ -1,14 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/pages/home/activities.css';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 function ActivityCard({ activity }) {
+  const cardRef = useScrollAnimation({
+    threshold: 0.1
+  });
+
   return (
-    <div className="activity-card">
+    <div ref={cardRef} className="activity-card">
       <div className="card-image-container">
         <img src={activity.imageUrl} alt={activity.name} className="card-image" />
         <div className="image-overlay">
-          <span className="view-activity">Visa aktivitet</span>
+        <Link to={`/activities/${activity.slug}`} className="view-activity">Visa aktivitet</Link>
         </div>
       </div>
       <div className="card-content">

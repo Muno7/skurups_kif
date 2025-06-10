@@ -1,18 +1,45 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/pages/home/hero.css';
 import Slideshow from '../components/Slideshow';
 import ActivityCard from '../components/ActivityCard';
 import activities from '../data/activities';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 function Home() {
+  const heroContentRef = useRef(null);
+
+  // Effect to trigger hero section animations on mount
+  useEffect(() => {
+    if (heroContentRef.current) {
+      const animatedElements = heroContentRef.current.querySelectorAll('.animate-in');
+      animatedElements.forEach((el, index) => {
+        // Use a small timeout for staggered animation and to ensure render
+        setTimeout(() => {
+          el.classList.add('animated');
+        }); // 50ms initial delay, then 200ms delay per element
+      });
+    }
+  }, []);
+
+  // Use the custom hook for each animatable section (activities, slideshow, view all)
+  const activitiesSectionHeaderRef = useScrollAnimation({
+    threshold: 0.1
+  });
+  const viewAllContainerRef = useScrollAnimation({
+    threshold: 0.1
+  });
+  const slideshowSectionHeaderRef = useScrollAnimation({
+    threshold: 0.1
+  });
+
   return (
     <>
       <section className="hero">
           <div className="hero-overlay"></div>
           <div className="hero-pattern"></div>
           <div className="container hero-container">
-              <div className="hero-content">
+              <div ref={heroContentRef} className="hero-content">
               <h1 className="animate-in">
                   Välkommen till <span className="text-accent">Skurups Kultur och Idrottsförening!</span>
               </h1>
@@ -33,7 +60,7 @@ function Home() {
 
       <section className="activities-section">
           <div className="container">
-              <div className="section-header">
+              <div ref={activitiesSectionHeaderRef} className="section-header">
                   <h2 className="section-title">Utforska våra aktiviteter och evenemang</h2>
                   <div className="title-underline"></div>
               </div>
@@ -52,7 +79,7 @@ function Home() {
 
       <section className="slideshow-section">
           <div className="container">
-              <div className="section-header">
+              <div ref={slideshowSectionHeaderRef} className="section-header">
                   <h2 className="section-title">Vår Gemenskap</h2>
                   <div className="title-underline"></div>
               </div>
