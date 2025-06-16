@@ -9,7 +9,7 @@ function ActivityCard({ activity }) {
   });
 
   return (
-    <div ref={cardRef} className="activity-card">
+    <div ref={cardRef} className="activity-card fadeIn">
       <div className="card-image-container">
         <img src={activity.imageUrl} alt={activity.name} className="card-image" />
         <div className="image-overlay">

@@ -7,9 +7,12 @@
 
 .slideshow-section {
     position: relative;    
-    background-color: #fff;
+    background: var(--primary-light);
     padding: 40px 0;
-    box-shadow: 0 -10px 20px rgba(0, 104, 204, 0.1);
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-header {
@@ -84,7 +87,7 @@
 }
 
 .nav-button {
-    background-color: white;
+    background-color: var(--primary-light);
     border: 2px solid var(--primary);
     color: var(--primary);
     width: 40px;

@@ -8,14 +8,11 @@ const useScrollAnimation = (options) => {
 
     if (!currentElement) return;
 
-    // Initially pause the animation
-    currentElement.style.animationPlayState = 'paused';
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
+            entry.target.classList.add('is-visible');
             // Unobserve after playing to ensure animation plays only once
             observer.unobserve(entry.target);
           }

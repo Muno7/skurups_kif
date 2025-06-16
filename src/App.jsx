@@ -9,6 +9,9 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
+import './css/components/hero.css';
+import './css/animations.css'
+
 // We will create a Footer component later
 // import Footer from './components/Footer';
 
