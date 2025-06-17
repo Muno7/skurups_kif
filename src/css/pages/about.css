@@ -41,6 +41,7 @@
     border-top: 5px solid var(--accent);
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-content-card:hover {
