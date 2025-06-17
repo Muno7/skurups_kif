@@ -8,6 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 import './css/components/hero.css';
 import './css/animations.css'
@@ -18,6 +19,7 @@ import './css/animations.css'
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>
