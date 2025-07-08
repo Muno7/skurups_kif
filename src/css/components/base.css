@@ -64,25 +64,17 @@ ul {
   border-color: var(--accent);
 }
 
-.btn-primary:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-}
-
 .btn-secondary {
-  background: transparent;
-  color: white;
+  background: white;
+  color: var(--primary);
   border-color: white;
   backdrop-filter: blur(10px);
 }
 
+.btn-primary:hover,
 .btn-secondary:hover {
-  background: white;
-  color: var(--primary);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
 }
 
 @media (min-width: 1024px) {
