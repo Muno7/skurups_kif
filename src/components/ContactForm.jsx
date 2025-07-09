@@ -26,6 +26,8 @@ const ContactForm = () => {
     }).then((res) => res.json());
 
     if (res.success) {
+      event.target.reset();
+      setCharCount(0);
       Swal.fire({
         title: 'Tack!',
         text: 'Ditt meddelande har skickats.',
@@ -46,8 +48,6 @@ const ContactForm = () => {
     <div className="contact-form">
       <h2>Skicka meddelande</h2>
       <form className="form" method="POST" onSubmit={onSubmit}>
-        <input type="hidden" name="formType" value="contact" />
-        <input type="hidden" name="timestamp" id="timestamp" />
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="firstName" className="form-label">Förnamn *</label>
@@ -71,21 +71,6 @@ const ContactForm = () => {
             <input type="tel" id="phone" name="phone" className="form-control" autoComplete="tel" placeholder="070-123 45 67" aria-describedby="phone-error" />
             <div className="error-message" id="phone-error"></div>
           </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="subject" className="form-label">Ämne *</label>
-          <select id="subject" name="subject" className="form-control" required aria-describedby="subject-error">
-            <option value="">Välj ämne...</option>
-            <option value="membership">Fråga om medlemskap</option>
-            <option value="activities">Fråga om aktiviteter</option>
-            <option value="english-kids">Engelska för barn</option>
-            <option value="arabic-kids">Arabiska för barn</option>
-            <option value="sewing">Sömnad & Handarbete</option>
-            <option value="karate">Karate</option>
-            <option value="events">Evenemang</option>
-            <option value="other">Övrigt</option>
-          </select>
-          <div className="error-message" id="subject-error"></div>
         </div>
         <div className="form-group">
           <label htmlFor="message" className="form-label">Meddelande *</label>
