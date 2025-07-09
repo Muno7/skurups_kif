@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from 'sweetalert2'
 import "../css/pages/contact.css";
 import "../css/components/base.css";
 
@@ -25,7 +26,19 @@ const ContactForm = () => {
     }).then((res) => res.json());
 
     if (res.success) {
-      console.log("Success", res);
+      Swal.fire({
+        title: 'Tack!',
+        text: 'Ditt meddelande har skickats.',
+        icon: 'success',
+        confirmButtonText: 'Stäng'
+      })
+    } else {
+      Swal.fire({
+        title: 'Ett fel uppstod',
+        text: 'Meddelandet kunde inte skickas. Försök igen eller kontakta oss direkt.',
+        icon: 'error',
+        confirmButtonText: 'Stäng'
+      })
     }
   };
 
