@@ -6,16 +6,33 @@ const ContactForm = () => {
   const [charCount, setCharCount] = useState(0);
   // You can add more state for form fields if you want to handle them in React
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // For now, just log or alert
-    alert("Formuläret skickades! (Här kan du lägga till riktig hantering.)");
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "53733e03-a0ec-4518-b124-bee4de78f999");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+    }
   };
 
   return (
     <div className="contact-form">
       <h2>Skicka meddelande</h2>
-      <form className="form" method="POST" action="#" noValidate onSubmit={handleSubmit}>
+      <form className="form" method="POST" onSubmit={onSubmit}>
         <input type="hidden" name="formType" value="contact" />
         <input type="hidden" name="timestamp" id="timestamp" />
         <div className="form-row">
