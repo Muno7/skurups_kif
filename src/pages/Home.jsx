@@ -3,14 +3,8 @@ import Slideshow from '../components/Slideshow';
 import ActivityCard from '../components/ActivityCard';
 import activities from '../data/activities';
 import Hero from '../components/Hero';
-import useScrollAnimation from '../hooks/useScrollAnimation';
 
 function Home() {
-  // Use the custom hook for each animatable section (activities, slideshow, view all)
-  const slideshowRef = useScrollAnimation({
-    threshold: 0.1
-  });
-
   return (
     <>
       <Hero 
@@ -47,8 +41,7 @@ function Home() {
                   <h2 className="section-title">Vår Gemenskap</h2>
                   <div className="title-underline"></div>
               </div>
-              
-              <div ref={slideshowRef} className="slideshow-container fadeIn">
+              <div className="slideshow-container">
                   <Slideshow />
               </div>
           </div>

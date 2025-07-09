@@ -2,8 +2,16 @@ import React from "react";
 import "../css/pages/contact.css";
 import "../css/components/base.css";
 import ContactForm from "../components/ContactForm";
+import useScrollAnimation from "../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
+  // Add refs for each contact card
+  const phoneRef = useScrollAnimation({ threshold: 0.1 });
+  const emailRef = useScrollAnimation({ threshold: 0.1 });
+  const addressRef = useScrollAnimation({ threshold: 0.1 });
+  const hoursRef = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <main className="main-content">
       <div className="container">
@@ -12,7 +20,7 @@ const Contact = () => {
           <div className="contact-info">
             <h2>Kontaktinformation</h2>
             {/* Phone */}
-            <div className="contact-item">
+            <div ref={phoneRef} className="contact-item fadeIn">
               <div className="contact-icon">
                 {/* Phone SVG */}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -22,11 +30,10 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>Telefon</h3>
                 <p><a href="tel:+46411123456">0411-123 456</a></p>
-                <p className="contact-note">Vardagar 9:00-17:00</p>
               </div>
             </div>
             {/* Email */}
-            <div className="contact-item">
+            <div ref={emailRef} className="contact-item fadeIn">
               <div className="contact-icon">
                 {/* Email SVG */}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -37,11 +44,10 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>E-post</h3>
                 <p><a href="mailto:kulturidrottforening@gmail.com">kulturidrottforening@gmail.com</a></p>
-                <p className="contact-note">Vi svarar inom 24 timmar</p>
               </div>
             </div>
             {/* Address */}
-            <div className="contact-item">
+            <div ref={addressRef} className="contact-item fadeIn">
               <div className="contact-icon">
                 {/* Address SVG */}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -59,7 +65,7 @@ const Contact = () => {
               </div>
             </div>
             {/* Opening Hours */}
-            <div className="contact-item">
+            <div ref={hoursRef} className="contact-item fadeIn">
               <div className="contact-icon">
                 {/* Clock SVG */}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,7 +76,7 @@ const Contact = () => {
               <div className="contact-details">
                 <h3>Öppettider</h3>
                 <p>Aktiviteter enligt schema</p>
-                <p className="contact-note">Se aktivitetssidan för detaljer</p>
+                <p className="contact-note"><Link to="/activities">Se aktivitetssidan för detaljer</Link></p>
               </div>
             </div>
           </div>

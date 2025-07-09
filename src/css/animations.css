@@ -1,7 +1,12 @@
 /* Animation for scroll reveal */
+
 .fadeIn {
   opacity: 0;
   transform: translateY(30px);
+  /* No animation here */
+}
+
+.fadeIn.is-visible {
   animation: fadeIn 1.2s forwards;
 }
 

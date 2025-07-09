@@ -250,3 +250,9 @@
     color: white;
   }
 }
+
+.Hero-fadeIn {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.2s forwards;
+}

@@ -58,7 +58,7 @@ function About() {
 
       <section className="values-section">
         <div className="container">
-          <h2 className="section-title fadeIn">Våra Värderingar</h2>
+          <h2 className="section-title">Våra Värderingar</h2>
           <div className="values-grid">
             <div ref={valueCardRef1} className="value-card fadeIn">
               <div className="value-icon">🤝</div>
