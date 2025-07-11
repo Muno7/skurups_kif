@@ -18,7 +18,7 @@ const Contact = () => {
         <div className="contact-grid">
           {/* Contact Information */}
           <div className="contact-info">
-            <h2>Kontaktinformation</h2>
+            <h1 className="contact-page-title">Kontaktinformation</h1>
             {/* Phone */}
             <div ref={phoneRef} className="contact-item fadeIn">
               <div className="contact-icon">
