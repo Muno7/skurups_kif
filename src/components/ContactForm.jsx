@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Swal from 'sweetalert2'
 import "../css/pages/contact.css";
 import "../css/components/base.css";
+import { Link } from "react-router-dom";
 
 const ContactForm = () => {
   const [charCount, setCharCount] = useState(0);
@@ -91,49 +92,21 @@ const ContactForm = () => {
           <div className="error-message" id="message-error"></div>
         </div>
         <div className="form-group">
-          <label className="checkbox-container">
+          <label>
             <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error" />
-            <span className="checkmark"></span>
-            <span className="checkbox-text">
-              Jag godkänner att mina uppgifter behandlas enligt
-              <a href="/integritetspolicy" target="_blank" rel="noopener noreferrer"> integritetspolicyn</a> *
+            <span>
+              Jag godkänner att mina uppgifter behandlas enligt <Link to="/integritetspolicy">integritetspolicyn</Link> *
             </span>
           </label>
           <div className="error-message" id="consent-error"></div>
         </div>
-        <button type="submit" className="btn btn-primary" id="submitBtn">
+        <button type="submit" className="btn" id="submitBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M22 2L2 8.5l9.5 3.5L15 21z"></path>
           </svg>
           <span className="btn-text">Skicka meddelande</span>
-          <div className="btn-loading" style={{ display: "none" }}>
-            <div className="spinner"></div>
-            Skickar...
-          </div>
         </button>
       </form>
-      {/* Success/Error Messages */}
-      <div className="form-message success-message" id="successMessage" style={{ display: "none" }}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-          <polyline points="22,4 12,14.01 9,11.01"></polyline>
-        </svg>
-        <div>
-          <h3>Tack för ditt meddelande!</h3>
-          <p>Vi har mottagit din förfrågan och återkommer inom 24 timmar.</p>
-        </div>
-      </div>
-      <div className="form-message error-message-box" id="errorMessage" style={{ display: "none" }}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="15" y1="9" x2="9" y2="15"></line>
-          <line x1="9" y1="9" x2="15" y2="15"></line>
-        </svg>
-        <div>
-          <h3>Ett fel uppstod</h3>
-          <p>Meddelandet kunde inte skickas. Försök igen eller kontakta oss direkt.</p>
-        </div>
-      </div>
     </div>
   );
 };
