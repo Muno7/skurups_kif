@@ -38,7 +38,10 @@ function About() {
 
       <section className="about-content">
         <div className="container">
-          <h2 className="section-title">Vilka Vi Är & Vår Resa</h2>
+          <div className="section-header">
+            <h2 className="section-title">Vilka Vi Är & Vår Resa</h2>
+            <div className="title-underline"></div>
+          </div>
           <div className="about-content-grid">
             <div ref={cardRef1} className="about-content-card fadeIn">
               <h3><span className="about-card-icon">🌱</span>Vår Vision & Grund</h3>
@@ -58,7 +61,10 @@ function About() {
 
       <section className="values-section">
         <div className="container">
-          <h2 className="section-title">Våra Värderingar</h2>
+          <div className="section-header">
+            <h2 className="section-title">Våra Värderingar</h2>
+            <div className="title-underline"></div>
+          </div>
           <div className="values-grid">
             <div ref={valueCardRef1} className="value-card fadeIn">
               <div className="value-icon">🤝</div>
