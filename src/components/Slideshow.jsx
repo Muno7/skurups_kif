@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../css/pages/home/slideshow.css';
+import '../css/components/slideshow.css';
 
 import skif_group2 from '../assets/slideshow/skif_group2.jpg';
 import skif_group from '../assets/slideshow/skif_group.jpg';

@@ -147,6 +147,10 @@
   border: 2px solid transparent;
 }
 
+.hero-buttons .btn-secondary {
+  border-color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
   .hero-section {

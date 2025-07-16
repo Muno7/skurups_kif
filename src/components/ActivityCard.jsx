@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/pages/home/activities.css';
+import '../css/components/activities.css';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 function ActivityCard({ activity }) {
