@@ -43,7 +43,7 @@ function ActivityDetail() {
       >
         <div className="activitydetail-hero-overlay"></div>
         <div className="activitydetail-back-hero">
-          <Link to="/activities#aktiviteter" className="btn-secondary">
+          <Link to="/activities#aktiviteter" className="btn btn-secondary">
             <ArrowLeft size={18} />
             Tillbaka
           </Link>
