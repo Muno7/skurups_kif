@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import skifLogo from '../assets/logo/skif_logo.png';
+import activities from '../data/activities';
 import '../css/components/footer.css';
 
 function Footer() {
@@ -42,9 +43,13 @@ function Footer() {
                     <div className="footer-column">
                         <h3 className="footer-heading">Aktiviteter</h3>
                         <ul className="footer-links">
-                            <li><Link to="/activities/karate">Karate</Link></li>
-                            <li><Link to="/activities/karate">Karate</Link></li>
-                            <li><Link to="/activities/karate">Karate</Link></li>
+                            {activities.slice(0, 4).map(activity => (
+                                <li key={activity.id}>
+                                    <Link to={`/activities/${activity.slug}`}>
+                                        {activity.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className="footer-column footer-contact-column">
