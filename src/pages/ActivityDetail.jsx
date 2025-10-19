@@ -1,11 +1,17 @@
 import { useParams, Link } from 'react-router-dom';
 import { Clock, MapPin, Users, Share2, ArrowLeft } from 'lucide-react';
 import activities from '../data/activities';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 import '../css/pages/activityDetail.css';
+import '../css/animations.css';
 
 function ActivityDetail() {
   const { slug } = useParams();
   const activity = activities.find(a => a.slug === slug);
+  
+  // Animation refs
+  const heroRef = useScrollAnimation({ threshold: 0.1 });
+  const contentCardRef = useScrollAnimation({ threshold: 0.1 });
 
   if (!activity) {
     return (
@@ -37,7 +43,7 @@ function ActivityDetail() {
   return (
     <div className="activity-detail">
       {/* Header Section */}
-      <div 
+      <div
         className="activitydetail-hero"
         style={{ backgroundImage: `url(${activity.imageUrl})` }}
       >
@@ -49,7 +55,7 @@ function ActivityDetail() {
           </Link>
         </div>
         <div className="container">
-          <div className="activitydetail-hero-content">
+          <div ref={heroRef} className="activitydetail-hero-content fadeIn">
             <div className="activitydetail-hero-center-content">
               <h1 className="activitydetail-hero-title">{activity.name}</h1>
               <p className="activitydetail-hero-description">{activity.description}</p>
@@ -99,7 +105,7 @@ function ActivityDetail() {
           </div>
         </div>
         {/* About Section */}
-        <div className="content-card">
+        <div ref={contentCardRef} className="content-card fadeIn">
           <h2 className="content-title">Om aktiviteten</h2>
           <p className="content-description">
             {activity.details}
