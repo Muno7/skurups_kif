@@ -80,7 +80,7 @@ function Footer() {
             <div className="container">
                 <p className="copyright">&copy; 2025 Skurups Kultur och Idrottsförening. Alla rättigheter förbehållna.</p>
                 <div className="footer-bottom-links">
-                    <a href="#">Integritetspolicy</a>
+                    <Link to="/privacy">Integritetspolicy</Link>
                 </div>
             </div>
         </div>

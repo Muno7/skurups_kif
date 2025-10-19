@@ -95,7 +95,7 @@ const ContactForm = () => {
           <label>
             <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error" />
             <span>
-              Jag godkänner att mina uppgifter behandlas enligt <Link to="/integritetspolicy">integritetspolicyn</Link> *
+              Jag godkänner att mina uppgifter behandlas enligt <Link to="/privacy">integritetspolicyn</Link> *
             </span>
           </label>
           <div className="error-message" id="consent-error"></div>
