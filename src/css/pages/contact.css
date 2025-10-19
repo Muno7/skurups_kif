@@ -157,6 +157,22 @@
   font-size: 0.95rem;
 }
 
+/* Form error styles */
+.form-control.input-error {
+  border-color: #e11d48; /* red-600 */
+}
+
+.form-control.input-error:focus {
+  border-color: #e11d48 !important;
+  outline: none !important;
+}
+
+.error-message {
+  color: #e11d48;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
 .form-control {
   width: 100%;
   padding: 14px 16px;
@@ -171,20 +187,10 @@
 .form-control:focus {
   outline: none;
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.form-control:invalid:not(:placeholder-shown) {
-  border-color: var(--error);
-}
-
-.form-control:valid:not(:placeholder-shown) {
-  border-color: var(--success);
 }
 
 select.form-control {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
   background-position: right 12px center;
   background-repeat: no-repeat;
   background-size: 16px;
