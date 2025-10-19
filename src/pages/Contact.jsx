@@ -4,6 +4,7 @@ import "../css/components/base.css";
 import ContactForm from "../components/ContactForm";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
+import Seo from '../components/Seo';
 
 const Contact = () => {
   // Add refs for each contact card
@@ -14,6 +15,12 @@ const Contact = () => {
 
   return (
     <main className="main-content">
+      <Seo
+        title="Kontakta oss - Skurups KIF"
+        description="Kontakta Skurups Kultur och Idrottsförening via vårt formulär eller mail."
+        url="https://skurups-kif.vercel.app/contact"
+        image="/social-preview.png"
+      />
       <div className="container">
         <div className="contact-grid">
           {/* Contact Information */}

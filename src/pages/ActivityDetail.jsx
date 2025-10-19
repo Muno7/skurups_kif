@@ -4,6 +4,7 @@ import activities from '../data/activities';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import '../css/pages/activityDetail.css';
 import '../css/animations.css';
+import Seo from '../components/Seo';
 
 function ActivityDetail() {
   const { slug } = useParams();
@@ -42,6 +43,22 @@ function ActivityDetail() {
 
   return (
     <div className="activity-detail">
+      <Seo
+        title={`${activity.name} - Skurups KIF`}
+        description={activity.description}
+        url={`https://skurups-kif.vercel.app/activities/${activity.slug}`}
+        image={activity.imageUrl}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": activity.name,
+          "startDate": activity.startDate || undefined,
+          "location": {
+            "@type": "Place",
+            "name": activity.location
+          }
+        }}
+      />
       {/* Header Section */}
       <div
         className="activitydetail-hero"

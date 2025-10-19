@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -9,6 +9,10 @@
       name="description"
       content="Skurups Kultur och Idrottsförening"
     />
+    <!-- SEO: canonical and robots -->
+  <link rel="canonical" href="https://skurups-kif.vercel.app/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Skurup, kultur, idrott, förening, aktiviteter, evenemang" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -25,6 +29,29 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Skurups Kultur och Idrottsförening</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Skurups Kultur och Idrottsförening" />
+    <meta property="og:description" content="Skurups Kultur och Idrottsförening — aktiviteter, evenemang och gemenskap i Skurup." />
+  <meta property="og:url" content="https://skurups-kif.vercel.app/" />
+    <meta property="og:site_name" content="Skurups KIF" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Skurups Kultur och Idrottsförening" />
+    <meta name="twitter:description" content="Skurups Kultur och Idrottsförening — aktiviteter, evenemang och gemenskap i Skurup." />
+  <!-- og:image and twitter:image removed for now -->
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Skurups Kultur och Idrottsförening",
+  "url": "https://skurups-kif.vercel.app/",
+      "logo": "%PUBLIC_URL%/logo192.png",
+      "sameAs": []
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

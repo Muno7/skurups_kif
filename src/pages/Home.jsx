@@ -3,10 +3,17 @@ import Slideshow from '../components/Slideshow';
 import ActivityCard from '../components/ActivityCard';
 import activities from '../data/activities';
 import Hero from '../components/Hero';
+import Seo from '../components/Seo';
 
 function Home() {
   return (
     <>
+            <Seo
+                title="Hem - Skurups KIF"
+                description="Utforska aktiviteter och evenemang i Skurup. Skurups Kultur och Idrottsförening välkomnar alla åldrar."
+                url="https://skurups-kif.vercel.app/"
+                image="/social-preview.png"
+            />
       <Hero 
         title={<span>Välkommen till<br /><span className="text-accent">Skurups Kultur och Idrottsförening</span></span>}
         description="Kom och upplev allt som Skurups Kultur och Idrottsförening har att erbjuda. Vi ser fram emot att välkomna dig i vår varma och inkluderande miljö!"

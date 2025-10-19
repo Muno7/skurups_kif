@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import activities from '../data/activities';
 import ActivityCard from '../components/ActivityCard';
 import Hero from '../components/Hero';
+import Seo from '../components/Seo';
 
 function Activities() {
   useEffect(() => {
@@ -19,6 +20,12 @@ function Activities() {
 
   return (
     <>
+      <Seo
+        title="Aktiviteter - Skurups KIF"
+        description="Upptäck våra aktiviteter för alla åldrar och intressen. Välj något som passar dig och bli en del av vår gemenskap."
+        url="https://skurups-kif.vercel.app/activities"
+        image="/social-preview.png"
+      />
       <Hero
         title="Upptäck Våra Aktiviteter"
         description="Vi erbjuder en mängd olika aktiviteter för alla åldrar och intressen. Utforska vårt utbud och hitta något som passar dig!"

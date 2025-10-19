@@ -3,6 +3,7 @@ import '../css/pages/about.css';
 import '../css/animations.css';
 import Hero from '../components/Hero';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import Seo from '../components/Seo';
 
 function About() {
   const cardRef1 = useScrollAnimation({
@@ -27,6 +28,12 @@ function About() {
 
   return (
     <div className="about-page">
+      <Seo
+        title="Om oss - Skurups KIF"
+        description="Lär känna Skurups Kultur och Idrottsförening — vår vision, värderingar och historia."
+        url="https://skurups-kif.vercel.app/about"
+        image="/social-preview.png"
+      />
       <Hero 
         title="Lär känna oss"
         description="Kom och upplev allt som Skurups Kultur och Idrottsförening har att erbjuda. Vi ser fram emot att välkomna dig i vår varma och inkluderande miljö!"
