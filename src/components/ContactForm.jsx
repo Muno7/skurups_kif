@@ -8,6 +8,7 @@ const ContactForm = () => {
   const [charCount, setCharCount] = useState(0);
   const [errors, setErrors] = useState({});
   const refs = useRef({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // You can add more state for form fields if you want to handle them in React
 
   const onSubmit = async (event) => {
@@ -61,6 +62,7 @@ const ContactForm = () => {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
+    setIsSubmitting(true);
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -69,6 +71,7 @@ const ContactForm = () => {
       },
       body: json
     }).then((res) => res.json());
+    setIsSubmitting(false);
 
     if (res.success) {
       form.reset();
@@ -78,14 +81,16 @@ const ContactForm = () => {
         title: 'Tack!',
         text: 'Ditt meddelande har skickats.',
         icon: 'success',
-        confirmButtonText: 'Stäng'
+        confirmButtonText: 'Stäng',
+        confirmButtonColor: '#0068cc' // custom green background for confirm button
       })
     } else {
       Swal.fire({
         title: 'Ett fel uppstod',
         text: 'Meddelandet kunde inte skickas. Försök igen eller kontakta oss direkt.',
         icon: 'error',
-        confirmButtonText: 'Stäng'
+        confirmButtonText: 'Stäng',
+        confirmButtonColor: '#EF4444' // custom red background for confirm button
       })
     }
   };
@@ -194,11 +199,17 @@ const ContactForm = () => {
           </label>
           <div className="error-message" id="consent-error">{errors.consent}</div>
         </div>
-        <button type="submit" className="btn" id="submitBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M22 2L2 8.5l9.5 3.5L15 21z"></path>
-          </svg>
-          <span className="btn-text">Skicka meddelande</span>
+        <button type="submit" className="btn" id="submitBtn" disabled={isSubmitting} aria-busy={isSubmitting}>
+          {isSubmitting ? (
+            <svg className="btn-spinner" width="18" height="18" viewBox="0 0 50 50" aria-hidden="true">
+              <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeDasharray="90" strokeDashoffset="0"></circle>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 2L2 8.5l9.5 3.5L15 21z"></path>
+            </svg>
+          )}
+          <span className="btn-text">{isSubmitting ? 'Skickar...' : 'Skicka meddelande'}</span>
         </button>
       </form>
     </div>
