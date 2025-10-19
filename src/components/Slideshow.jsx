@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/components/slideshow.css';
 
-import skif_group2 from '../assets/slideshow/skif_group2.jpg';
-import skif_group from '../assets/slideshow/skif_group.jpg';
-import karate_group_big from '../assets/slideshow/karate_group_big.jpg';
+// Dynamically import all images from the slideshow folder
+const importAll = (r) => {
+  return r.keys().map(r);
+};
 
-const images = [skif_group2, skif_group, karate_group_big];
+const images = importAll(require.context('../assets/slideshow/', false, /\.(png|jpe?g|svg)$/));
 const SLIDE_TRANSITION_DURATION = 500; // Matches CSS transition duration
 
 function Slideshow() {
