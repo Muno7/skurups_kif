@@ -12,7 +12,7 @@ const activities = [
     slug: 'karate',
     name: 'Karate',
     day: 'Tisdag & Fredag',
-    time: 'Tis 18:00–20:00, Fre 19:00–21:00',
+    time: 'Fre 18:00–20:00',
     location: 'Östergårdshallen',
     age: '10–20 år',
     description: 'Karateträning för barn och ungdomar i åldern 10–20 år.',
