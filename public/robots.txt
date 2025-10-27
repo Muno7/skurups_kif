@@ -1,0 +1,6 @@
+# For all robots
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://skurupskif.se/sitemap.xml
