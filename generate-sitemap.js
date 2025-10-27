@@ -1,7 +1,17 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
 
-const hostname = 'https://skurupskif.se'; // <-- replace with your domain
+const activities = [
+  { slug: 'karate' },
+  { slug: 'hantverk' },
+  { slug: 'arabiska' },
+  { slug: 'syverkstad' },
+  { slug: 'engelska' },
+  { slug: 'spejare' },
+  { slug: 'valfardsaktiviteter' }
+];
+
+const hostname = 'https://skurupskif.se';
 
 async function generateSitemap() {
   const links = [
@@ -9,7 +19,11 @@ async function generateSitemap() {
     { url: '/activities', changefreq: 'weekly', priority: 0.9 },
     { url: '/about', changefreq: 'monthly', priority: 0.8 },
     { url: '/contact', changefreq: 'monthly', priority: 0.8 },
-    // Add other important routes here
+    ...activities.map(activity => ({
+      url: `/activities/${activity.slug}`,
+      changefreq: 'weekly',
+      priority: 0.9
+    }))
   ];
 
   const stream = new SitemapStream({ hostname });
