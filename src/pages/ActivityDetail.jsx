@@ -49,14 +49,21 @@ function ActivityDetail() {
         url={`https://skurupskif.se/activities/${activity.slug}`}
         image={activity.imageUrl}
         jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Activity",
-          "name": activity.name,
-          "startDate": activity.startDate || undefined,
-          "location": {
-            "@type": "Place",
-            "name": activity.location
-          }
+            "@context": "https://schema.org",
+            "@type": "Activity",
+            "name": activity.name,
+            "description": activity.description,
+            "url": `https://skurupskif.se/activities/${activity.slug}`,
+            "image": `https://skurupskif.se/${activity.imageUrl}`,
+            "location": {
+                "@type": "Place",
+                "name": activity.location
+            },
+            "organizer": {
+                "@type": "Organization",
+                "name": "Skurups Kultur och Idrottsförening",
+                "url": "https://skurupskif.se/"
+            }
         }}
       />
       {/* Header Section */}
