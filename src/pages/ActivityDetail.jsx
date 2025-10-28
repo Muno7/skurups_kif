@@ -50,7 +50,7 @@ function ActivityDetail() {
         image={activity.imageUrl}
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "Event",
+          "@type": "Activity",
           "name": activity.name,
           "startDate": activity.startDate || undefined,
           "location": {
