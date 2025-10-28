@@ -18,7 +18,7 @@ const Contact = () => {
       <Seo
         title="Kontakta oss - Skurups KIF"
         description="Kontakta Skurups Kultur och Idrottsförening via vårt formulär eller mail."
-        url="https://skurups-kif.vercel.app/contact"
+        url="https://skurupskif.se/contact"
         image="/social-preview.png"
       />
       <div className="container">

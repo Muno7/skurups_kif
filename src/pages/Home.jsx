@@ -11,7 +11,7 @@ function Home() {
             <Seo
                 title="Hem - Skurups KIF"
                 description="Utforska aktiviteter och evenemang i Skurup. Skurups Kultur och Idrottsförening välkomnar alla åldrar."
-                url="https://skurups-kif.vercel.app/"
+                url="https://skurupskif.se/"
                 image="/social-preview.png"
             />
       <Hero 

@@ -31,7 +31,7 @@ function About() {
       <Seo
         title="Om oss - Skurups KIF"
         description="Lär känna Skurups Kultur och Idrottsförening — vår vision, värderingar och historia."
-        url="https://skurups-kif.vercel.app/about"
+        url="https://skurupskif.se/about"
         image="/social-preview.png"
       />
       <Hero 

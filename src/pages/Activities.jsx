@@ -23,7 +23,7 @@ function Activities() {
       <Seo
         title="Aktiviteter - Skurups KIF"
         description="Upptäck våra aktiviteter för alla åldrar och intressen. Välj något som passar dig och bli en del av vår gemenskap."
-        url="https://skurups-kif.vercel.app/activities"
+        url="https://skurupskif.se/activities"
         image="/social-preview.png"
       />
       <Hero

@@ -46,7 +46,7 @@ function ActivityDetail() {
       <Seo
         title={`${activity.name} - Skurups KIF`}
         description={activity.description}
-        url={`https://skurups-kif.vercel.app/activities/${activity.slug}`}
+        url={`https://skurupskif.se/activities/${activity.slug}`}
         image={activity.imageUrl}
         jsonLd={{
           "@context": "https://schema.org",
