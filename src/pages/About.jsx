@@ -36,7 +36,7 @@ function About() {
       />
       <Hero 
         title="Lär känna oss"
-        description="Kom och upplev allt som Skurups Kultur och Idrottsförening har att erbjuda. Vi ser fram emot att välkomna dig i vår varma och inkluderande miljö!"
+        description="Vår passion är att skapa möjligheter för gemenskap, aktiviteter och upplevelser som alla kan vara med i."
         primaryButtonText = "Upptäck vad vi gör"
         primaryButtonLink = "/activities"
         secondaryButtonText = "Kom i kontakt"

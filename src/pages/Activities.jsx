@@ -29,8 +29,8 @@ function Activities() {
       <Hero
         title="Upptäck Våra Aktiviteter"
         description="Vi erbjuder en mängd olika aktiviteter för alla åldrar och intressen. Utforska vårt utbud och hitta något som passar dig!"
-        primaryButtonText="Se alla aktiviteter"
-        primaryButtonLink="#aktiviteter"
+        primaryButtonText="Läs mer om oss"
+        primaryButtonLink="/about"
         secondaryButtonText="Kontakta oss"
         secondaryButtonLink="/contact"
       />
